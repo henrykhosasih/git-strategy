@@ -1,0 +1,19 @@
+name: Dev to Prod Deployment
+
+on:
+  pull_request:
+    branches:
+      - "main"
+    types: [opened, synchronize, reopened]
+
+jobs:
+  deploy-to-prod:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Mock Deploy to Prod
+        run: |
+          echo "Deploying to production environment..."
+          echo "✅ Deployment to production successful"
