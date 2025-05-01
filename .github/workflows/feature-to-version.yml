@@ -1,0 +1,29 @@
+name: Feature to Version Branch CI
+
+on:
+  pull_request:
+    branches:
+      - "v*.*.*"
+    types: [opened, synchronize, reopened]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Mock Lint
+        run: |
+          echo "Running mock linting..."
+          echo "✅ Linting passed"
+
+      - name: Mock Test
+        run: |
+          echo "Running mock tests..."
+          echo "✅ Tests passed"
+
+      - name: Mock Build
+        run: |
+          echo "Building application..."
+          echo "✅ Build successful"

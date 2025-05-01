@@ -1,0 +1,19 @@
+name: Version to Dev Deployment
+
+on:
+  pull_request:
+    branches:
+      - "dev"
+    types: [opened, synchronize, reopened]
+
+jobs:
+  deploy-to-dev:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Mock Deploy to Dev
+        run: |
+          echo "Deploying to dev environment..."
+          echo "✅ Deployment to dev successful"
