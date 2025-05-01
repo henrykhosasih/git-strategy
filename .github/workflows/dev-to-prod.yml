@@ -3,7 +3,7 @@ name: Dev to Prod Deployment
 on:
   pull_request:
     branches:
-      - "prod"
+      - "main"
     types: [opened, synchronize, reopened]
 
 jobs:
@@ -17,5 +17,3 @@ jobs:
         run: |
           echo "Deploying to production environment..."
           echo "✅ Deployment to production successful"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
